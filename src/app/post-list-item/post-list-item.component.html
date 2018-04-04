@@ -1,0 +1,10 @@
+<ul class=" list-group-item  container col-md-12" *ngFor="let p of posts">
+  <li [ngClass]="{'list-group-item-success':p.loveIt>0  }" >
+<div   [ngClass]="{'list-group-item-danger':p.loveIt<0  }"  >
+  <span  class=" title"> {{p.title}} </span>  <span class="date">{{p.createdAT | date :'short'}}</span>
+  <div><p>{{p.content}}</p></div> <p>Likes:{{p.loveIt}}</p>
+  <button class="btn btn-success" (click)="like(p)" name="">Love it!</button> <button class="btn btn-danger" (click)="dislike(p)">D'ont love it!</button>
+
+</div>
+  </li>
+</ul>
